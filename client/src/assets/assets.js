@@ -75,10 +75,14 @@ export const assets = {
 }
 
 export const cities = [
-    "Dubai",
-    "Singapore",
-    "New York",
-    "London",
+    "Bogota",
+    "Medellin",
+    "Cali",
+    "Barranquilla",
+    "Cartagena",
+    "Manizales",
+    "San andres y providencias",
+
 ];
 
 // Exclusive Offers Dummy Data
