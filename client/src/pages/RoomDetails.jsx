@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { assets, facilityIcons, roomsDummyData } from '../assets/assets'
+import { assets, facilityIcons, roomCommonData, roomsDummyData } from '../assets/assets'
 import StarRating from '../components/StarRating'
 
 const RoomDetails = () => {
@@ -92,6 +92,45 @@ const RoomDetails = () => {
                 </button>
             </form>
 
+            {/*Common Specifications*/}
+            <div className='mt-25 space-y-4'>
+                {roomCommonData.map((spec, index) => (
+                    <div key={index} className='flex items-start gap-2'>
+                        <img src={spec.icon} alt='title' className='w-6.5' />
+                        <div>
+                            <p className='text-base'>{spec.title}</p>
+                            <p className='text-gray-500'>{spec.description}</p>
+
+                        </div>
+                    </div>
+                ))}
+            </div>
+
+            <div className='max-w-3xl border-y border-gray-300 my-15 py-10 text-gray-500'>
+                <p>
+                    Los huéspedes serán ubicados en la planta baja según la disponibilidad.
+                    Obtendrás un cómodo apartamento de dos habitaciones con una verdadera sensación de ciudad.
+                    El precio indicado es para dos huéspedes; en la sección de huéspedes, marca el número de personas
+                    para obtener el precio exacto para grupos. Los huéspedes serán ubicados
+                    en la planta baja según la disponibilidad. Obtendrás el cómodo apartamento
+                    de dos habitaciones que ofrece una auténtica sensación de ciudad.
+                </p>
+            </div>
+
+                {/*Hosted by*/}
+                <div className='flex flex-col items-start gap-4'>
+                    <div className='flex gap-4'>
+                        <img src={room.hotel.owner.image} alt="Host" className='h-14 w-14 md:h-18 md:w-18 rounded-full'/>
+                        <div>
+                            <p className='text-lg md:text-xl'>Hosted by {room.hotel.name}</p>
+                            <div className='flex items-center mt-1'>
+                                <StarRating/>
+                                <p className='ml-2'>200+ reseñas</p>
+                            </div>
+                        </div>
+                    </div>
+                <button className=' px-6 py-2.5 mt-4 rounded text-white bg-primary hover:bg-primary-dull transition-all cursor-pointer'>Contactame</button>
+                </div>
         </div>
     )
 }
