@@ -91,7 +91,7 @@ const NavBar = () => {
             <div className="flex items-center gap-3 md:hidden">
                 {user && <UserButton>
                     <UserButton.MenuItems>
-                        <UserButton.Action label="Mis Reservas" labelIcon={<BookIcon />} onClick={() => navigate('/my-bookins')} />
+                        <UserButton.Action label="Mis Reservas" labelIcon={<BookIcon />} onClick={() => navigate('/my-bookings')} />
                     </UserButton.MenuItems>
                 </UserButton>
                 }
